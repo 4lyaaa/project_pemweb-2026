@@ -21,7 +21,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // PAKSA Laravel buat me-register AdminPanelProvider di sini
+        if (class_exists(\App\Providers\Filament\AdminPanelProvider::class)) {
+            $this->app->register(\App\Providers\Filament\AdminPanelProvider::class);
+        }
     }
 
     /**
@@ -33,12 +36,14 @@ class AppServiceProvider extends ServiceProvider
         Page::formActionsAlignment(Alignment::Right);
         Notifications::alignment(Alignment::End);
         Notifications::verticalAlignment(VerticalAlignment::End);
+        
         Page::$reportValidationErrorUsing = function (ValidationException $exception) {
             Notification::make()
                 ->title($exception->getMessage())
                 ->danger()
                 ->send();
         };
+
         MountableAction::configureUsing(function (MountableAction $action) {
             $action->modalFooterActionsAlignment(Alignment::Right);
         });

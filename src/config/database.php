@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'sqlite'),
+    'default' => 'sqlite',
 
     /*
     |--------------------------------------------------------------------------
@@ -30,16 +30,11 @@ return [
     */
 
     'connections' => [
-
         'sqlite' => [
-            'driver' => 'sqlite',
-            'url' => env('DB_URL'),
-            'database' => env('DB_DATABASE', database_path('database.sqlite')),
-            'prefix' => '',
-            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
-            'busy_timeout' => null,
-            'journal_mode' => null,
-            'synchronous' => null,
+        'driver' => 'sqlite',
+        'database' => database_path('database.sqlite'), // <-- GANTI BARIS INI BIAR MENUNJUK KE FILE UTAMA
+        'prefix' => '',
+        'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
         'mysql' => [
