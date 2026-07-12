@@ -23,20 +23,26 @@ class ProjectInitialize extends Command
     /**
      * Execute the console command.
      */
-    public function handle()
-    {
-        $this->call('migrate:fresh', [
-            '--force' => true,
-        ]);
-        $this->call('shield:generate', [
-            '--all' => true,
-            '--panel' => 'admin',
-        ]);
-        $this->call('db:seed', [
-            '--force' => true,
-        ]);
+   public function handle()
+{
+    // Jalankan migration baru tanpa menghapus database
+    $this->call('migrate', [
+        '--force' => true,
+    ]);
 
-        $this->call('filament:optimize-clear');
-        $this->call('optimize:clear');
-    }
+    // Generate permission Filament
+    $this->call('shield:generate', [
+        '--all' => true,
+        '--panel' => 'admin',
+    ]);
+
+    // Seed hanya jika diperlukan
+    $this->call('db:seed', [
+        '--force' => true,
+    ]);
+
+    // Clear cache
+    $this->call('filament:optimize-clear');
+    $this->call('optimize:clear');
+}
 }

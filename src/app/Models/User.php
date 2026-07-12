@@ -10,11 +10,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\Order;
 
 class User extends Authenticatable implements FilamentUser, HasAvatar
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory,HasRoles, Notifiable;
+    use HasFactory, HasRoles, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -26,6 +28,11 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
         'name',
         'email',
         'password',
+        'theme',              // ✅ TAMBAHKAN
+        'theme_color',        // ✅ TAMBAHKAN
+        'preferensi_rasa',    // ✅ TAMBAHKAN
+        'nomor_whatsapp',     // ✅ TAMBAHKAN
+        'alamat',             // ✅ TAMBAHKAN
     ];
 
     /**
@@ -57,7 +64,6 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
             return asset('storage/' . $this->avatar_url);
         } else {
             $hash = md5(strtolower(trim($this->email)));
-
             return 'https://www.gravatar.com/avatar/' . $hash . '?d=mp&r=g&s=250';
         }
     }
@@ -65,5 +71,10 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
     public function canAccessPanel(Panel $panel): bool
     {
         return true;
+    }
+
+    public function orders(): HasMany
+    {
+        return $this->hasMany(Order::class);
     }
 }

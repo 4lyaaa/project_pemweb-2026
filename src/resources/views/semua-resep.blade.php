@@ -50,6 +50,9 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s;
             margin-bottom: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         
         .card-resep:hover {
@@ -63,6 +66,27 @@
             border-radius: 10px;
         }
         
+        .card-resep .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-top: 15px;
+        }
+        
+        .card-resep h5 {
+            font-weight: 700;
+            margin-top: 10px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .card-resep p {
+            color: #666;
+            margin-bottom: 15px;
+            flex: 1;
+        }
+        
         .btn-lihat-resep {
             border: 1px solid #ff6699;
             color: #ff6699;
@@ -70,6 +94,8 @@
             border-radius: 25px;
             text-decoration: none;
             display: inline-block;
+            margin-top: auto;
+            align-self: center;
         }
         
         .btn-lihat-resep:hover {
@@ -83,6 +109,26 @@
             padding: 20px;
             color: white;
             margin-top: 50px;
+        }
+        
+        /* Fix height agar semua card sama */
+        .row-equal-height {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .row-equal-height .col-md-4 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-resep-img{
+        width:250px !important;
+        height:250px !important;
+        object-fit:contain !important;
+        display:block;
+        margin:20px auto;
+        border-radius:12px;
         }
     </style>
 </head>
@@ -99,15 +145,17 @@
 
 <!-- DAFTAR SEMUA RESEP -->
 <div class="container py-5">
-    <div class="row">
+    <div class="row row-equal-height">
         
         <!-- Resep 1: Cookies Bomb -->
         <div class="col-md-4">
             <div class="card-resep">
                 <img src="{{ asset('assets/images/cookies-bomb-1.png') }}" alt="Cookies Bomb">
-                <h5 class="mt-3 fw-bold">🍪 Cookies Bomb</h5>
-                <p class="text-muted">Dessert untuk membuat mood mu menjadi lebih ceria</p>
-                <a href="#" class="btn-lihat-resep" data-bs-toggle="modal" data-bs-target="#modalCookiesBomb">Lihat Resep</a>
+                <div class="card-body">
+                    <h5>🍪 Cookies Bomb</h5>
+                    <p>Dessert untuk membuat mood mu menjadi lebih ceria</p>
+                    <a href="#" class="btn-lihat-resep" data-bs-toggle="modal" data-bs-target="#modalCookiesBomb">Lihat Resep</a>
+                </div>
             </div>
         </div>
         
@@ -115,9 +163,11 @@
         <div class="col-md-4">
             <div class="card-resep">
                 <img src="{{ asset('assets/images/lava_cake_1.png') }}" alt="Lava Cake">
-                <h5 class="mt-3 fw-bold">🍫 Chocolate Lava Cake</h5>
-                <p class="text-muted">Dessert meleleh dengan coklat premium</p>
-                <a href="#" class="btn-lihat-resep" data-bs-toggle="modal" data-bs-target="#modalLavaCake">Lihat Resep</a>
+                <div class="card-body">
+                    <h5>🍫 Chocolate Lava Cake</h5>
+                    <p>Dessert meleleh dengan coklat premium</p>
+                    <a href="#" class="btn-lihat-resep" data-bs-toggle="modal" data-bs-target="#modalLavaCake">Lihat Resep</a>
+                </div>
             </div>
         </div>
         
@@ -125,9 +175,11 @@
         <div class="col-md-4">
             <div class="card-resep">
                 <img src="{{ asset('assets/images/yogurt_bowl_1.png') }}" alt="Yogurt Bowl">
-                <h5 class="mt-3 fw-bold">🥣 Fruit Yogurt Bowl</h5>
-                <p class="text-muted">Dessert sehat untuk program diet</p>
-                <a href="#" class="btn-lihat-resep" data-bs-toggle="modal" data-bs-target="#modalYogurtBowl">Lihat Resep</a>
+                <div class="card-body">
+                    <h5>🥣 Fruit Yogurt Bowl</h5>
+                    <p>Dessert sehat untuk program diet</p>
+                    <a href="#" class="btn-lihat-resep" data-bs-toggle="modal" data-bs-target="#modalYogurtBowl">Lihat Resep</a>
+                </div>
             </div>
         </div>
         
@@ -135,9 +187,11 @@
         <div class="col-md-4">
             <div class="card-resep">
                 <img src="{{ asset('assets/images/protein_pancake_1.png') }}" alt="Protein Pancake">
-                <h5 class="mt-3 fw-bold">🥞 Protein Pancake</h5>
-                <p class="text-muted">Penambah berat badan & tinggi protein</p>
-                <a href="#" class="btn-lihat-resep" data-bs-toggle="modal" data-bs-target="#modalProteinPancake">Lihat Resep</a>
+                <div class="card-body">
+                    <h5>🥞 Protein Pancake</h5>
+                    <p>Penambah berat badan & tinggi protein</p>
+                    <a href="#" class="btn-lihat-resep" data-bs-toggle="modal" data-bs-target="#modalProteinPancake">Lihat Resep</a>
+                </div>
             </div>
         </div>
         
@@ -145,9 +199,11 @@
         <div class="col-md-4">
             <div class="card-resep">
                 <img src="{{ asset('assets/images/pudding_vanilla.png') }}" alt="Pudding">
-                <h5 class="mt-3 fw-bold">🍮 Sugar Free Pudding</h5>
-                <p class="text-muted">Dessert rendah gula untuk diabetes</p>
-                <a href="#" class="btn-lihat-resep" data-bs-toggle="modal" data-bs-target="#modalPudding">Lihat Resep</a>
+                <div class="card-body">
+                    <h5>🍮 Sugar Free Pudding</h5>
+                    <p>Dessert rendah gula untuk diabetes</p>
+                    <a href="#" class="btn-lihat-resep" data-bs-toggle="modal" data-bs-target="#modalPudding">Lihat Resep</a>
+                </div>
             </div>
         </div>
         
@@ -155,12 +211,67 @@
         <div class="col-md-4">
             <div class="card-resep">
                 <img src="{{ asset('assets/images/cheesecake_protein_1.png') }}" alt="Cheesecake">
-                <h5 class="mt-3 fw-bold">🍰 Cheesecake Protein</h5>
-                <p class="text-muted">High protein untuk fitness</p>
-                <a href="#" class="btn-lihat-resep" data-bs-toggle="modal" data-bs-target="#modalCheesecake">Lihat Resep</a>
+                <div class="card-body">
+                    <h5>🍰 Cheesecake Protein</h5>
+                    <p>High protein untuk fitness</p>
+                    <a href="#" class="btn-lihat-resep" data-bs-toggle="modal" data-bs-target="#modalCheesecake">Lihat Resep</a>
+                </div>
             </div>
         </div>
         
+        <!-- Resep 7: Mochi Matcha -->
+        <div class="col-md-4">
+            <div class="card-resep">
+                <img src="{{ asset('assets/images/mochi.png') }}" alt="Mochi Matcha">
+
+                <div class="card-body">
+                    <h5>🍡 Mochi Matcha</h5>
+
+                    <p>Mochi lembut dengan isian krim matcha premium yang lumer di mulut.</p>
+
+                    <a href="#"
+                    class="btn-lihat-resep"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalMochiMatcha">Lihat Resep
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resep 8: Bolu Ketan Hitam -->
+        <div class="col-md-4">
+            <div class="card-resep">
+                <img src="{{ asset('assets/images/bolu-ketan.png') }}" alt="Bolu Ketan Hitam">
+
+                <div class="card-body">
+                    <h5>🍰 Bolu Ketan Hitam</h5>
+
+                    <p>Bolu ketan hitam yang lembut dengan tekstur empuk dan cita rasa manis yang khas.</p>
+
+                    <a href="#"
+                    class="btn-lihat-resep"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalBoluKetan">Lihat Resep
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resep 9: Dubai Chewy Cookie -->
+<div class="col-md-4">
+    <div class="card-resep">
+        <img src="{{ asset('assets/images/dubai-chewy.png') }}" alt="Dubai Chewy Cookie">
+        <div class="card-body">
+            <h5>🍪 Dubai Chewy Cookie</h5>
+            <p>Cookies viral dengan isian pistachio dan kataifi yang renyah serta lapisan marshmallow cokelat yang lembut.</p>
+            <a href="#"
+               class="btn-lihat-resep"
+               data-bs-toggle="modal"
+               data-bs-target="#modalDubaiCookie">Lihat Resep
+            </a>
+            </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -171,6 +282,9 @@
 @include('partials.protein-pancake')
 @include('partials.pudding')
 @include('partials.cheesecake-protein')
+@include('partials.mochi-matcha')
+@include('partials.bolu-ketan')
+@include('partials.dubai-chewy-cookie')
 
 <footer>
     <p>2024-2026 SweetRecipe | Alya Nurul Qolbi - Universitas Esa Unggul</p>
@@ -178,17 +292,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-function simpanResep(nama) {
-    let saved = localStorage.getItem('resepTersimpan');
-    let arr = saved ? JSON.parse(saved) : [];
-    if (!arr.includes(nama)) {
-        arr.push(nama);
-        localStorage.setItem('resepTersimpan', JSON.stringify(arr));
-        alert('✅ Resep "' + nama + '" berhasil disimpan!');
-    } else {
-        alert('⚠️ Resep "' + nama + '" sudah pernah disimpan.');
-    }
-}
 </script>
 </body>
 </html>

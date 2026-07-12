@@ -173,73 +173,61 @@
             
             <!-- CARD RESEP 1: COOKIES BOMB -->
             <div class="resep-card">
-               <img src="{{ asset('assets/images/cookies_bomb.png') }}" class="resep-card-img">
+               <img src="{{ asset('assets/images/cookies-bomb-1.png') }}" alt="Cookies Bomb" style="height: 150px; object-fit: cover;">
                <div class="resep-card-body">
                   <h3 class="resep-card-title">🍪 Cookies Bomb</h3>
                   <p class="resep-card-desc">Dessert untuk membuat mood mu menjadi lebih ceria (๑˃ᴗ˂)</p>
                   <button class="btn-lihat-resep" data-toggle="modal" data-target="#modalCookiesBomb">👀 Lihat Resep</button>
-                  <button class="btn-simpan-resep" onclick="simpanResep('Cookies Bomb')">📖 Simpan Resep</button>
-                  <div class="resep-tersimpan" id="simpanCookiesMsg">✅ Resep Cookies Bomb telah disimpan!</div>
                </div>
             </div>
             
             <!-- CARD RESEP 2: CHOCOLATE LAVA CAKE -->
             <div class="resep-card">
-               <img src="{{ asset('assets/images/lava_cake.png') }}" class="resep-card-img">
+               <img src="{{ asset('assets/images/lava_cake.png') }}" alt="Lava Cake" style="height: 150px; object-fit: cover;">
                <div class="resep-card-body">
                   <h3 class="resep-card-title">🍫 Chocolate Lava Cake</h3>
                   <p class="resep-card-desc">Dessert meleleh dengan coklat premium</p>
                   <button class="btn-lihat-resep" data-toggle="modal" data-target="#modalLavaCake">👀 Lihat Resep</button>
-                  <button class="btn-simpan-resep" onclick="simpanResep('Chocolate Lava Cake')">📖 Simpan Resep</button>
-                  <div class="resep-tersimpan" id="simpanLavaMsg">✅ Resep Chocolate Lava Cake telah disimpan!</div>
                </div>
             </div>
             
             <!-- CARD RESEP 3: FRUIT YOGURT BOWL -->
             <div class="resep-card">
-               <img src="{{ asset('assets/images/yougurt_bowl.png') }}" class="resep-card-img">
+               <img src="{{ asset('assets/images/yougurt_bowl.png') }}" alt="Yogurt Bowl" style="height: 150px; object-fit: cover;">
                <div class="resep-card-body">
                   <h3 class="resep-card-title">🥣 Fruit Yogurt Bowl</h3>
                   <p class="resep-card-desc">Dessert sehat untuk program diet</p>
                   <button class="btn-lihat-resep" data-toggle="modal" data-target="#modalYogurtBowl">👀 Lihat Resep</button>
-                  <button class="btn-simpan-resep" onclick="simpanResep('Fruit Yogurt Bowl')">📖 Simpan Resep</button>
-                  <div class="resep-tersimpan" id="simpanYogurtMsg">✅ Resep Fruit Yogurt Bowl telah disimpan!</div>
                </div>
             </div>
             
             <!-- CARD RESEP 4: PROTEIN PANCAKE -->
             <div class="resep-card">
-               <img src="{{ asset('assets/images/protein_pancake.png') }}" class="resep-card-img">
+               <img src="{{ asset('assets/images/protein_pancake.png') }}" alt="Protein Pancake" style="height: 150px; object-fit: cover;">
                <div class="resep-card-body">
                   <h3 class="resep-card-title">🥞 Protein Pancake</h3>
                   <p class="resep-card-desc">Penambah berat badan & tinggi protein</p>
                   <button class="btn-lihat-resep" data-toggle="modal" data-target="#modalProteinPancake">👀 Lihat Resep</button>
-                  <button class="btn-simpan-resep" onclick="simpanResep('Protein Pancake')">📖 Simpan Resep</button>
-                  <div class="resep-tersimpan" id="simpanProteinMsg">✅ Resep Protein Pancake telah disimpan!</div>
                </div>
             </div>
             
             <!-- CARD RESEP 5: SUGAR FREE PUDDING -->
             <div class="resep-card">
-               <img src="{{ asset('assets/images/pudding_vanilla.png') }}" class="resep-card-img">
+               <img src="{{ asset('assets/images/pudding_vanilla.png') }}" alt="Sugar Free Pudding" style="height: 150px; object-fit: cover;">
                <div class="resep-card-body">
                   <h3 class="resep-card-title">🍮 Sugar Free Pudding</h3>
                   <p class="resep-card-desc">Dessert rendah gula untuk diabetes</p>
                   <button class="btn-lihat-resep" data-toggle="modal" data-target="#modalPudding">👀 Lihat Resep</button>
-                  <button class="btn-simpan-resep" onclick="simpanResep('Sugar Free Pudding')">📖 Simpan Resep</button>
-                  <div class="resep-tersimpan" id="simpanPuddingMsg">✅ Resep Sugar Free Pudding telah disimpan!</div>
                </div>
             </div>
             
             <!-- CARD RESEP 6: CHEESECAKE PROTEIN -->
             <div class="resep-card">
-               <img src="{{ asset('assets/images/cheesecake_protein.png') }}" class="resep-card-img">
+               <img src="{{ asset('assets/images/cheesecake_protein.png') }}" alt="Cheesecake Protein" style="height: 150px; object-fit: cover;">
                <div class="resep-card-body">
                   <h3 class="resep-card-title">🍰 Cheesecake Protein</h3>
                   <p class="resep-card-desc">High protein untuk fitness</p>
                   <button class="btn-lihat-resep" data-toggle="modal" data-target="#modalCheesecake">👀 Lihat Resep</button>
-                  <button class="btn-simpan-resep" onclick="simpanResep('Cheesecake Protein')">📖 Simpan Resep</button>
-                  <div class="resep-tersimpan" id="simpanCheesecakeMsg">✅ Resep Cheesecake Protein telah disimpan!</div>
                </div>
             </div>
             
@@ -261,42 +249,4 @@
       <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
       <script src="{{ asset('assets/js/popper.min.js') }}"></script>
       <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
-      
-      <script>
-         // Fitur simpan resep ke localStorage
-         function simpanResep(namaResep) {
-            let resepTersimpan = localStorage.getItem('resepTersimpan');
-            if (resepTersimpan) {
-               resepTersimpan = JSON.parse(resepTersimpan);
-            } else {
-               resepTersimpan = [];
-            }
-            
-            if (!resepTersimpan.includes(namaResep)) {
-               resepTersimpan.push(namaResep);
-               localStorage.setItem('resepTersimpan', JSON.stringify(resepTersimpan));
-               
-               let msgId = '';
-               if (namaResep === 'Cookies Bomb') msgId = 'simpanCookiesMsg';
-               else if (namaResep === 'Chocolate Lava Cake') msgId = 'simpanLavaMsg';
-               else if (namaResep === 'Fruit Yogurt Bowl') msgId = 'simpanYogurtMsg';
-               else if (namaResep === 'Protein Pancake') msgId = 'simpanProteinMsg';
-               else if (namaResep === 'Sugar Free Pudding') msgId = 'simpanPuddingMsg';
-               else if (namaResep === 'Cheesecake Protein') msgId = 'simpanCheesecakeMsg';
-               
-               if (msgId) {
-                  let msg = document.getElementById(msgId);
-                  msg.style.display = 'block';
-                  setTimeout(() => {
-                     msg.style.display = 'none';
-                  }, 2000);
-               }
-               
-               alert('✅ Resep "' + namaResep + '" berhasil disimpan!');
-            } else {
-               alert('⚠️ Resep "' + namaResep + '" sudah pernah disimpan sebelumnya.');
-            }
-         }
-      </script>
-   </body>
 </html>

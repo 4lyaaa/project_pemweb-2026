@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'default' => 'sqlite',
+    'default' => env('DB_CONNECTION', 'sqlite'), // <-- GANTI BARIS INI BIAR MENUNJUK KE SQLITE
 
     /*
     |--------------------------------------------------------------------------

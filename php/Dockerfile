@@ -11,7 +11,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libmcrypt-dev libreadline-dev libgmp-dev libzip-dev \
     libpq-dev libjpeg-dev libpng-dev libfreetype6-dev \
     libssl-dev openssh-server libmagickwand-dev git cron \
-    nano libxml2-dev nodejs npm && \
+    nano libxml2-dev nodejs npm \
+    libicu-dev zlib1g-dev libwebp-dev && \
     rm -rf /var/lib/apt/lists/*
 
 # Install PHP extensions
@@ -20,7 +21,12 @@ RUN docker-php-ext-install soap exif pcntl intl gmp zip pdo_mysql pdo_pgsql bcma
     docker-php-ext-install gd
 
 # Install PECL extensions
-RUN pecl install redis mongodb-1.16.0 imagick xdebug memcached && \
+RUN pecl channel-update pecl.php.net && \
+    pecl install redis && \
+    pecl install mongodb && \
+    pecl install imagick && \
+    pecl install xdebug && \
+    pecl install memcached && \
     docker-php-ext-enable redis mongodb imagick xdebug memcached
 
 # Install Composer
