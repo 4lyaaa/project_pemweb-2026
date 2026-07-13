@@ -6,11 +6,15 @@ use App\Models\Order;
 use Illuminate\Http\Request;
 use Midtrans\Config;
 use Midtrans\Notification;
+use Illuminate\Support\Facades\Log;
 
 class MidtransCallbackController extends Controller
 {
     public function handle(Request $request)
     {
+        Log::info('=== MIDTRANS CALLBACK ===');
+        Log::info($request->all());
+
         Config::$serverKey = config('midtrans.server_key');
         Config::$isProduction = config('midtrans.is_production');
         Config::$isSanitized = config('midtrans.is_sanitized');
