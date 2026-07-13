@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\RecipeController;
 use App\Http\Controllers\Admin\FlavorController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\OrderHistoryController;
 
 
 Livewire::setUpdateRoute(function ($handle) {
@@ -124,3 +125,8 @@ Route::resource('/admin/pesanan', OrderController::class);
 
 //Route untuk halaman admin user
 Route::resource('/admin/user', UserController::class);
+
+//Route untuk halaman riwayat pesanan user
+Route::get('/riwayat-pesanan', [OrderHistoryController::class, 'index'])
+    ->middleware('auth')
+    ->name('orders.history');

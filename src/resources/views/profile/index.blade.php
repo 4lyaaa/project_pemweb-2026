@@ -96,6 +96,25 @@
                 <i class="fas fa-save me-2"></i> Simpan Perubahan
             </button>
         </form>
+
+        <div class="mt-3">
+
+    <a href="{{ route('orders.history') }}"
+       class="btn w-100 py-3"
+       style="background: #fff;
+              color: #ff6699;
+              border: 2px solid #ff6699;
+              border-radius: 30px;
+              font-weight: 600;
+              transition: all 0.3s ease;">
+
+        <i class="fas fa-box me-2"></i>
+        Riwayat Pesanan
+
+    </a>
+
+</div>
+
     </div>
 </div>
 
@@ -115,5 +134,11 @@
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(255, 102, 153, 0.4);
     }
+
+    .btn-outline-history:hover{
+    background:#ff6699 !important;
+    color:white !important;
+}    
+
 </style>
 @endsection
