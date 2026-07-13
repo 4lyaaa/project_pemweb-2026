@@ -17,7 +17,6 @@ class RecipeController extends Controller
         $recipes = Recipe::latest()->get();
 
         return view('admin.resep.index', compact('recipes'));
-
     }
 
     /**
@@ -75,24 +74,68 @@ class RecipeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        return view('admin.resep.edit');
+        $recipe = Recipe::findOrFail($id);
+
+        return view('admin.resep.edit', compact('recipe'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $recipe = Recipe::findOrFail($id);
+
+        $request->validate([
+            'nama' => 'required',
+            'rasa' => 'required',
+            'harga' => 'required|numeric',
+            'deskripsi' => 'required',
+            'bahan' => 'required',
+            'langkah' => 'required',
+            'foto' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        ]);
+
+        if ($request->hasFile('foto')) {
+
+            if ($recipe->foto && Storage::disk('public')->exists($recipe->foto)) {
+                Storage::disk('public')->delete($recipe->foto);
+            }
+
+            $recipe->foto = $request->file('foto')->store('recipes', 'public');
+        }
+
+        $recipe->nama = $request->nama;
+        $recipe->rasa = $request->rasa;
+        $recipe->harga = $request->harga;
+        $recipe->deskripsi = $request->deskripsi;
+        $recipe->bahan = $request->bahan;
+        $recipe->langkah = $request->langkah;
+
+        $recipe->save();
+
+        return redirect()
+            ->route('resep.index')
+            ->with('success', 'Resep berhasil diperbarui.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $recipe = Recipe::findOrFail($id);
+
+        if ($recipe->foto && Storage::disk('public')->exists($recipe->foto)) {
+            Storage::disk('public')->delete($recipe->foto);
+        }
+
+        $recipe->delete();
+
+        return redirect()
+            ->route('resep.index')
+            ->with('success', 'Resep berhasil dihapus.');
     }
 }

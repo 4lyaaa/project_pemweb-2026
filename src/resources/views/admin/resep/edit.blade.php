@@ -3,91 +3,142 @@
 @section('content')
 
 <h1 class="text-3xl font-bold mb-6">
-
-Edit Resep
-
+    Edit Resep
 </h1>
 
 <div class="bg-white rounded-2xl shadow p-8">
 
-<form>
+    <form action="{{ route('resep.update', $recipe->id) }}"
+          method="POST"
+          enctype="multipart/form-data">
 
-<div class="mb-5">
+        @csrf
+        @method('PUT')
 
-<label class="block mb-2 font-semibold">
+        {{-- Nama Resep --}}
+        <div class="mb-5">
 
-Nama Resep
+            <label class="block mb-2 font-semibold">
+                Nama Resep
+            </label>
 
-</label>
+            <input
+                type="text"
+                name="nama"
+                value="{{ old('nama', $recipe->nama) }}"
+                class="w-full border rounded-xl p-3">
 
-<input
-type="text"
-value="Lava Cake"
-class="w-full border rounded-xl p-3">
+        </div>
 
-</div>
+        {{-- Rasa --}}
+        <div class="mb-5">
 
-<div class="mb-5">
+            <label class="block mb-2 font-semibold">
+                Rasa Dessert
+            </label>
 
-<label class="block mb-2 font-semibold">
+            <select
+                name="rasa"
+                class="w-full border rounded-xl p-3">
 
-Rasa Dessert
+                <option value="Manis" {{ $recipe->rasa=='Manis'?'selected':'' }}>Manis</option>
+                <option value="Asam" {{ $recipe->rasa=='Asam'?'selected':'' }}>Asam</option>
+                <option value="Gurih" {{ $recipe->rasa=='Gurih'?'selected':'' }}>Gurih</option>
+                <option value="Segar" {{ $recipe->rasa=='Segar'?'selected':'' }}>Segar</option>
+                <option value="Creamy" {{ $recipe->rasa=='Creamy'?'selected':'' }}>Creamy</option>
 
-</label>
+            </select>
 
-<select class="w-full border rounded-xl p-3">
+        </div>
 
-<option selected>Chocolate</option>
+        {{-- Harga --}}
+        <div class="mb-5">
 
-<option>Asam</option>
+            <label class="block mb-2 font-semibold">
+                Harga
+            </label>
 
-<option>Gurih</option>
+            <input
+                type="number"
+                name="harga"
+                value="{{ old('harga', $recipe->harga) }}"
+                class="w-full border rounded-xl p-3">
 
-<option>Segar</option>
+        </div>
 
-<option>Creamy</option>
+        {{-- Foto --}}
+        <div class="mb-5">
 
-</select>
+            <label class="block mb-2 font-semibold">
+                Foto
+            </label>
 
-</div>
+            @if($recipe->foto)
 
-<div class="mb-5">
+                <img
+                    src="{{ asset('storage/'.$recipe->foto) }}"
+                    class="w-40 rounded-lg mb-4">
 
-<label class="block mb-2 font-semibold">
+            @endif
 
-Harga
+            <input
+                type="file"
+                name="foto"
+                class="w-full">
 
-</label>
+        </div>
 
-<input
-type="number"
-value="25000"
-class="w-full border rounded-xl p-3">
+        {{-- Deskripsi --}}
+        <div class="mb-5">
 
-</div>
+            <label class="block mb-2 font-semibold">
+                Deskripsi
+            </label>
 
-<div class="mb-5">
+            <textarea
+                name="deskripsi"
+                rows="5"
+                class="w-full border rounded-xl p-3">{{ old('deskripsi', $recipe->deskripsi) }}</textarea>
 
-<label class="block mb-2 font-semibold">
+        </div>
 
-Deskripsi
+        {{-- Bahan --}}
+        <div class="mb-5">
 
-</label>
+            <label class="block mb-2 font-semibold">
+                Bahan
+            </label>
 
-<textarea
-rows="5"
-class="w-full border rounded-xl p-3">Chocolate Lava Cake dengan tekstur lembut.</textarea>
+            <textarea
+                name="bahan"
+                rows="8"
+                class="w-full border rounded-xl p-3">{{ old('bahan', $recipe->bahan) }}</textarea>
 
-</div>
+        </div>
 
-<button
-class="bg-yellow-500 text-white px-6 py-3 rounded-xl">
+        {{-- Langkah --}}
+        <div class="mb-5">
 
-Update
+            <label class="block mb-2 font-semibold">
+                Langkah
+            </label>
 
-</button>
+            <textarea
+                name="langkah"
+                rows="8"
+                class="w-full border rounded-xl p-3">{{ old('langkah', $recipe->langkah) }}</textarea>
 
-</form>
+        </div>
+
+        <button
+            type="submit"
+            class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-xl">
+
+            Update Resep
+
+        </button>
+
+    </form>
 
 </div>
 

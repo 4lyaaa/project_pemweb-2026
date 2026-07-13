@@ -130,3 +130,13 @@ Route::resource('/admin/user', UserController::class);
 Route::get('/riwayat-pesanan', [OrderHistoryController::class, 'index'])
     ->middleware('auth')
     ->name('orders.history');
+
+//Route untuk halaman admin login
+Route::get('/admin/login', [AdminLoginController::class, 'index'])
+    ->name('admin.login');
+
+Route::post('/admin/login', [AdminLoginController::class, 'login'])
+    ->name('admin.login.submit');
+
+Route::post('/admin/logout', [AdminLoginController::class, 'logout'])
+    ->name('admin.logout');
