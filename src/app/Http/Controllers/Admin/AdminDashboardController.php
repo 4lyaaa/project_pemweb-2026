@@ -11,7 +11,7 @@ class AdminDashboardController extends Controller
 {
     public function index()
     {
-        $totalResep = Recipe::count();
+        $totalResep = 9;
 
         $totalUser = User::count();
 
