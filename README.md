@@ -18,7 +18,7 @@ Proyek ini dibuat sebagai **Tugas Akhir Mata Kuliah Pemrograman Web** oleh:
 
 **Dosen Pengampu:** Jefry Sunupurwa Asri S.Kom., M.Kom.
 
----
+
 
 ## ✨ Fitur Utama
 
@@ -31,7 +31,7 @@ Proyek ini dibuat sebagai **Tugas Akhir Mata Kuliah Pemrograman Web** oleh:
 | 🖥️ **Dashboard Admin** | Admin dapat mengelola data resep (CRUD) menggunakan Filament V3 |
 | 📱 **Responsive Design** | Tampilan mobile-friendly dengan Bootstrap 5 |
 
----
+
 
 ## 🛠️ Teknologi yang Digunakan
 
@@ -45,7 +45,7 @@ Proyek ini dibuat sebagai **Tugas Akhir Mata Kuliah Pemrograman Web** oleh:
 | **Livewire** | Komponen interaktif |
 | **Font Awesome** | Ikon-ikon menarik |
 
----
+
 
 ## 🚀 Cara Menjalankan Proyek
 
@@ -101,7 +101,7 @@ php artisan serve
 
 Buka browser: `http://127.0.0.1:8000`
 
----
+
 
 ## 🐳 Menjalankan dengan Docker
 
@@ -113,7 +113,7 @@ docker compose exec php php artisan migrate
 
 Akses: `http://project_pemweb.test`
 
----
+
 
 ## 📂 Struktur Folder Penting
 
@@ -136,7 +136,6 @@ sweetrecipe/
     └── migrations/           # Struktur database
 ```
 
----
 
 ## 👥 Hak Akses
 
@@ -145,7 +144,7 @@ sweetrecipe/
 | **User (Pengunjung)** | - Melihat katalog resep<br>- Membeli resep<br>- Memfilter rasa sesuai keinginan user<br>- Pembayaran Midtrans |
 | **Admin** | - Login ke dashboard<br>- CRUD resep dessert<br>- CRUD kategori<br>- Upload gambar |
 
----
+
 
 ## 📞 Kontak
 
@@ -155,12 +154,12 @@ Jika ada pertanyaan, silakan hubungi:
 - **Instagram:** @alyanrlql
 - **Telepon:** 083894951894
 
----
+
 
 ## 📄 Lisensi
 
 Proyek ini dibuat untuk tujuan **akademik** sebagai tugas mata kuliah Pemrograman Web.
 
----
+
 
 **© 2024-2026 SweetRecipe | Alya Nurul Qolbi - Universitas Esa Unggul**
