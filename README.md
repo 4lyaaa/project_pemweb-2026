@@ -8,7 +8,7 @@
 
 ## 📌 Tentang Proyek
 
-**SWEETRECIPE** adalah sistem informasi katalog resep dessert berbasis website yang menyediakan informasi resep dessert secara terstruktur. Sistem ini membantu pengguna menemukan rekomendasi dessert berdasarkan kebutuhan tertentu, seperti dessert untuk **diet**, **mood booster**, atau **penambah berat badan**.
+**SWEETRECIPE** adalah sistem informasi katalog resep dessert berbasis website yang menyediakan informasi resep dessert secara terstruktur. Sistem ini membantu pengguna menemukan dessert berdasarkan filter rasa pada dessert yang sedang diinnginkan oleh user. Selain fitur filter rasa sistem ini menyediakan fitur penjualan disetiap detail resep nya, jika user ingin membeli menu tersebut user bisa mengklik tombol beli sekarang, dan juga dilengkapi fitur pembayaran.
 
 Proyek ini dibuat sebagai **Tugas Akhir Mata Kuliah Pemrograman Web** oleh:
 
