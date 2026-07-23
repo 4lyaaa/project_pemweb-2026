@@ -142,7 +142,7 @@ sweetrecipe/
 
 | Role | Akses |
 |------|-------|
-| **User (Pengunjung)** | - Melihat katalog resep<br>- Mencari resep<br>- Melihat rekomendasi<br>- Menyimpan resep |
+| **User (Pengunjung)** | - Melihat katalog resep<br>- Membeli resep<br>- Memfilter rasa sesuai keinginan user<br>- Pembayaran Midtrans |
 | **Admin** | - Login ke dashboard<br>- CRUD resep dessert<br>- CRUD kategori<br>- Upload gambar |
 
 ---
