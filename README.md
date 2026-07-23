@@ -24,6 +24,7 @@ Proyek ini dibuat sebagai **Tugas Akhir Mata Kuliah Pemrograman Web** oleh:
 
 | Fitur | Keterangan |
 |-------|-------------|
+| 🍨 **Filter Rasa** | User dapat memfilter rasa desseert sesuai yang diinginkan|
 | 🍽️ **Katalog Resep** | Menampilkan daftar resep dessert lengkap dengan gambar dan deskripsi |
 | 💡 **Penjualan Disetiap Resep** | Ketika User mengklik salah satu resep akan muncul tombol beli sekarang |
 | 💵 **Pembayaran Berintegrasi dengan Midtrans** | Ketika user ingin membayar menu yang sudah dipilih, halaman web akan lagsung menampilkan ke midtrans |
