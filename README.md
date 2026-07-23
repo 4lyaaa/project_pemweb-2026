@@ -25,9 +25,9 @@ Proyek ini dibuat sebagai **Tugas Akhir Mata Kuliah Pemrograman Web** oleh:
 | Fitur | Keterangan |
 |-------|-------------|
 | 🍽️ **Katalog Resep** | Menampilkan daftar resep dessert lengkap dengan gambar dan deskripsi |
-| 💡 **Rekomendasi Dessert** | Rekomendasi berdasarkan kategori: Diet, Mood Booster, Penambah Berat Badan |
+| 💡 **Penjualan Disetiap Resep** | Ketika User mengklik salah satu resep akan muncul tombol beli sekarang |
+| 💵 **Pembayaran Berintegrasi dengan Midtrans** | Ketika user ingin membayar menu yang sudah dipilih, halaman web akan lagsung menampilkan ke midtrans |
 | 🔍 **Detail Resep** | Menampilkan bahan-bahan dan langkah pembuatan |
-| 💾 **Simpan Resep** | Pengguna bisa menyimpan resep favorit ke localStorage |
 | 🖥️ **Dashboard Admin** | Admin dapat mengelola data resep (CRUD) menggunakan Filament V3 |
 | 📱 **Responsive Design** | Tampilan mobile-friendly dengan Bootstrap 5 |
 
