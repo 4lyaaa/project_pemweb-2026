@@ -58,8 +58,7 @@ Proyek ini dibuat sebagai **Tugas Akhir Mata Kuliah Pemrograman Web** oleh:
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/NAMA_USER_GITHUB_ANDA/sweetrecipe.git
-cd sweetrecipe
+git clone https://github.com/4lyaaa/project_pemweb-2026
 ```
 
 ### 2. Install Dependencies
@@ -81,7 +80,7 @@ Edit file `.env` sesuai database:
 DB_CONNECTION=mariadb
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=sweetrecipe
+DB_DATABASE=project_pemweb
 DB_USERNAME=root
 DB_PASSWORD=
 ```
